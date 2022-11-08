@@ -33,3 +33,5 @@ function disable_emojis_tinymce( $plugins ) {
 		return array();
 	}
 }
+
+add_theme_support( 'post-thumbnails' );
