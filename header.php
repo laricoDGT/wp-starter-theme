@@ -1,16 +1,23 @@
 <!DOCTYPE html>
-<html <?php language_attributes(); ?> class="no-js">
+<html <?php language_attributes(); ?>>
   <head>
-  <meta charset="<?php bloginfo( 'charset' ); ?>">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
-    <title><?php bloginfo('name'); ?> | <?php if( is_home() ) : echo bloginfo( 'description' ); endif; ?><?php wp_title( '', true ); ?></title>
+  <meta charset="<?php bloginfo( 'charset' ); ?>">  
+    <title>
+	<?php
+	if (is_home() || is_front_page()) {
+	    bloginfo('name');
+	} else {
+	    wp_title('', true, 'right');
+	    echo ' - ';
+	    bloginfo('name');
+	}
+	?>
+     </title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
     <!-- <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/images/logo.png" /> -->
  
-    <link rel="profile" href="http://gmpg.org/xfn/11">
-	  <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-
-	  <?php wp_head(); ?>
+   
+    <?php wp_head(); ?>
   </head>
 
   <body <?php body_class(); ?>>
