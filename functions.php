@@ -1,7 +1,8 @@
 <?php 
  
- register_nav_menus(array(
+register_nav_menus(array(
     'primary' => __('Primary Menu', ''),
+    'top-menu' => __('Header Top Menu', ''),
    
 ));
 
