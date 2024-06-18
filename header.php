@@ -2,17 +2,11 @@
 <html <?php language_attributes(); ?>>
   <head>
   <meta charset="<?php bloginfo( 'charset' ); ?>">  
-    <title>
-	<?php
-	if (is_home() || is_front_page()) {
-	    bloginfo('name');
-	} else {
-	    wp_title('', true, 'right');
-	    echo ' - ';
-	    bloginfo('name');
-	}
-	?>
-     </title>
+ <title>
+        <?php bloginfo('name'); ?> |
+        <?php if( is_front_page() ) : echo bloginfo( 'description' ); endif; ?>
+        <?php wp_title( '', true ); ?>
+    </title>
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
     <!-- <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/images/logo.png" /> -->
  
